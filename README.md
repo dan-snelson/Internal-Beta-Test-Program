@@ -75,7 +75,7 @@ Clone your Opt-in policy and change EA Value to "None" to unset a computer's Tes
 
 ### Opt-in > Files and Processes > Execute Command
 
-We've added the following one-liner to the **Files and Processes > Execute Command** Payload for your Opt-in policy to force Self Service to refresh:
+We've added the following one-liner to the **Files and Processes > Execute Command** Payload for our Opt-in policy to force Self Service to refresh:
 
 `/usr/local/bin/jamf manage -verbose ; /usr/bin/su \- "`/usr/bin/stat -f%Su /dev/console`" -c "/usr/bin/osascript -e 'tell application \"Self Service\" to activate' -e 'tell application \"System Events\" to key code 53' -e 'tell application \"System Events\" to keystroke \"r\" using {command down}'"`
 
@@ -83,13 +83,13 @@ We've added the following one-liner to the **Files and Processes > Execute Comma
 
 ### Opt-out > Files and Processes > Execute Command
 
-A slight variation on the opt-in one-liner, if a user opts-out of our interal Beta Test program, we'll _also_ remove them from Apple's. (Bbbbbuuuwwwahahahah!!!)
+A slight variation on the opt-in one-liner, if a user opts-out of our internal Beta Test program, we'll _also_ remove them from Apple's. (Bbbbbuuuwwwahahahah!!!)
 
 Add to the **Files and Processes > Execute Command** Payload for your Opt-out policy:
 
 `/System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll ; /bin/rm -v /Library/Application\ Support/JAMF/Receipts/macOSDeveloperBetaAccessUtility.pkg ; /usr/bin/su \- "`/usr/bin/stat -f%Su /dev/console`" -c "/usr/bin/osascript -e 'tell application \"Self Service\" to activate' -e 'tell application \"System Events\" to key code 53' -e 'tell application \"System Events\" to keystroke \"r\" using {command down}'" ; /usr/local/bin/jamf recon`
 
-(Special thanks to Kyle Flater @kfbbt) for his racing-stripe of including the Escape key in case the user was viewing the Self Service Description.)
+(Special thanks to Kyle Flater, @floeter, for his racing-stripe of including the Escape key in case the user was viewing the Self Service Description.)
 
 ### Privacy Preferences Policy Control settings
 
