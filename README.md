@@ -1,5 +1,11 @@
 # Your Internal Beta Test Program: Opt-in / Opt-out via Self Service
 
+## Presentation: JNUC 2019
+
+- [YouTube](https://www.youtube.com/watch?v=AhYPVvO7LwM)
+
+---
+
 ## Scripts
 - [Extension Attribute Update.bash](Extension%20Attribute%20Update.bash)
 <!-- - [Client-side Functions](https://github.com/dan-snelson/Jamf-Pro-Scripts/tree/master/Client-side%20Functions) -->
@@ -102,9 +108,3 @@ You'll also need the following Privacy Preferences Policy Control settings nowad
 - **Access:** Allow
 
 ![Screenshot of Privacy Preferences Policy Control](images/Screen%20Shot%202021-01-16%20at%2010.11.01%20AM.png)
-
----
-
-## Presentation: JNUC 2019
-
-- [YouTube](https://www.youtube.com/watch?v=AhYPVvO7LwM)
