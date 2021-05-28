@@ -1,8 +1,8 @@
 # Your Internal Beta Test Program: Opt-in / Opt-out via Self Service
 
-## Presentation: JNUC 2019
+## Presentation
 
-- [YouTube](https://www.youtube.com/watch?v=AhYPVvO7LwM)
+- [JNUC 2019](https://www.youtube.com/watch?v=AhYPVvO7LwM)
 
 ---
 
