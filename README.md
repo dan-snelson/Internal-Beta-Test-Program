@@ -7,7 +7,7 @@
 ---
 
 ## Scripts
-- [Extension Attribute Update.bash](Extension%20Attribute%20Update.bash)
+- [Extension Attribute Update.sh](Extension%20Attribute%20Update.sh)
 <!-- - [Client-side Functions](https://github.com/dan-snelson/Jamf-Pro-Scripts/tree/master/Client-side%20Functions) -->
 
 ![Screenshot of Self Service policy](images/Screen%20Shot%202018-06-29%20at%2010.00.27%20PM.png)
