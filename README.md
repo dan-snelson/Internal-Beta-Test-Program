@@ -77,34 +77,4 @@ Clone your Opt-in policy and change EA Value to "None" to unset a computer's Tes
 
 ---
 
-## Refresh Self Service when opting-in / opting-out
-
-### Opt-in > Files and Processes > Execute Command
-
-We've added the following one-liner to the **Files and Processes > Execute Command** Payload for our Opt-in policy to force Self Service to refresh:
-
-`/usr/local/bin/jamf manage -verbose ; /usr/bin/su \- "`/usr/bin/stat -f%Su /dev/console`" -c "/usr/bin/osascript -e 'tell application \"Self Service\" to activate' -e 'tell application \"System Events\" to key code 53' -e 'tell application \"System Events\" to keystroke \"r\" using {command down}'"`
-
-![Screenshot of Files and Processes > Execute Command](images/Screen%20Shot%202017-11-09%20at%208.26.16%20PM.png)
-
-### Opt-out > Files and Processes > Execute Command
-
-A slight variation on the opt-in one-liner, if a user opts-out of our internal Beta Test program, we'll _also_ remove them from Apple's. (Bbbbbuuuwwwahahahah!!!)
-
-Add to the **Files and Processes > Execute Command** Payload for your Opt-out policy:
-
-`/System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll ; /bin/rm -v /Library/Application\ Support/JAMF/Receipts/macOSDeveloperBetaAccessUtility.pkg ; /usr/bin/su \- "`/usr/bin/stat -f%Su /dev/console`" -c "/usr/bin/osascript -e 'tell application \"Self Service\" to activate' -e 'tell application \"System Events\" to key code 53' -e 'tell application \"System Events\" to keystroke \"r\" using {command down}'" ; /usr/local/bin/jamf recon`
-
-(Special thanks to Kyle Flater, @floeter, for his racing-stripe of including the Escape key in case the user was viewing the Self Service Description.)
-
-### Privacy Preferences Policy Control settings
-
-You'll also need the following Privacy Preferences Policy Control settings nowadays:
-
-- **Identifier:** `com.jamf.management.service`
-- **Identifier Type:** Bundle ID
-- **Code Requirement:** `anchor apple generic and identifier "com.jamf.management.service" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "483DWKW443")`
-- **App or Service:** Accessibility
-- **Access:** Allow
-
-![Screenshot of Privacy Preferences Policy Control](images/Screen%20Shot%202021-01-16%20at%2010.11.01%20AM.png)
+## [Refresh Self Service when users Opt-in / Opt-out of your Internal Beta Test Program](https://snelson.us/2021/01/refresh-self-service-when-users-opt-in-opt-out-of-your-internal-beta-test-program/)
