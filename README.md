@@ -78,4 +78,4 @@ Clone your Opt-in policy and change EA Value to "None" to unset a computer's Tes
 ---
 
 ## Refresh Self Service when users Opt-in / Opt-out of your Internal Beta Test Program
-- [See blog](https://snelson.us/2021/01/refresh-self-service-when-users-opt-in-opt-out-of-your-internal-beta-test-program/)
+- [See blog](https://snelson.us/2021/01/refresh-self-service-when-users-opt-in-opt-out-of-your-internal-beta-test-program/#pppc)
